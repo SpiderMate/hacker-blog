@@ -36,9 +36,9 @@
           {% if paginator.total_pages > 1 %}
           <ul class="pagination justify-content-end" style="margin: 0px;">
             {% if paginator.previous_page == 1 %}
-            <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}" class="page-item">&laquo;</a>
+            <li class="page-item"><a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}" class="page-link">&laquo;</a></li>
             {% elsif paginator.previous_page%}
-            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="page-item">&laquo;</a>
+            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="page-link">&laquo;</a>
             {% else %}
             <span class="page-item">&laquo;</span>
             {% endif %} {% for page in (1..paginator.total_pages) %} {% if page == paginator.page %}
