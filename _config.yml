@@ -1,9 +1,9 @@
 title: Hacker-Blog
-description: "A Jekyll Blog Theme For Hackers"
+description: "spidersec"
 author:
-  name: "SomeHacker"
+  name: "spidersec"
   email: "someone@somewebsite.somedomain"
-  url: "https://ashishchaudhary.in/hacker-blog"
+  url: "https://spidersec.ninja"
 
 baseurl: /
 
