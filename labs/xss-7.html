@@ -1,0 +1,75 @@
+<html>
+   <head>
+      <title>SPIDERSEC - BLOG OF A PENTESTER</title>
+      <link rel="icon" href="../images/logo.png">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="../css/style.css">
+   </head>
+
+  <body>
+    <div id="particles-js" style="z-index: -1;"></div>
+    <nav>
+       <div class="appleNav">
+          <ul>
+             <li>
+                <a href="#"><img class="avatar" style="margin-top: 50px;" src="../images/logo.png" height="80"></a>
+             </li>
+             <li><a href="../" class="menu-link"><b>BLOG</b></a></li>
+             <li><a href=""><b>PROJECTS</b></a></li>
+             <li><a href=""><b>GALLERY</b></a></li>
+             <li><a href="index.html"><b>LABS</b></a></li>
+          </ul>
+       </div>
+    </nav>
+   <center>
+     <strong><h2>TYPE - 7</h2></strong>
+     <div class="box" style="margin-top: 250px;">
+      XSS ME : <input id="xss_me"><button id="xss" class="button">P0P</button>
+     </div>
+
+      <div id="can_u_xss"></div>
+   </center>
+
+
+   <script>
+   function filter() {
+       var js_filter0 = document.getElementById('xss_me').value;
+           var js_filter1 = js_filter0.replace(/"/g, ' n00b ');
+           var js_filter2 = js_filter1.replace(/</g, ' n00b ');
+           var js_filter3 = js_filter2.replace(/=/g, ' n00b ');
+           var js_filter4 = js_filter3.replace(/>/g, ' n00b ');
+           var js_filter5 = js_filter4.replace(/'/g, ' n00b ');
+           var js_filter6 = js_filter5.replace(/-/g, ' n00b ');
+           var html = 'Your Name is <font color="red">'+js_filter6+'</font>.';
+
+           document.getElementById('can_u_xss').innerHTML = unescape(html);
+       }
+
+   document.getElementById('xss').addEventListener('click', filter);
+   </script>
+
+
+   <script src="../particles.js"></script>
+   <script src="../js/app.js"></script>
+   <script>
+      var count_particles, stats, update;
+      stats = new Stats;
+      stats.setMode(0);
+      stats.domElement.style.position = 'absolute';
+      stats.domElement.style.left = '0px';
+      stats.domElement.style.top = '0px';
+      document.body.appendChild(stats.domElement);
+      count_particles = document.querySelector('.js-count-particles');
+      update = function() {
+        stats.begin();
+        stats.end();
+        if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+          count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+        }
+        requestAnimationFrame(update);
+      };
+      requestAnimationFrame(update);
+   </script>
+   </body>
+   </html>
